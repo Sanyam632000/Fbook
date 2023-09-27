@@ -1,0 +1,51 @@
+
+
+<style>
+    .header{
+        display:flex;
+        justify-content: space-between;
+        background-color:black;
+        height:50px;
+        width:1430px;
+    }
+    .header_left,.header_right{
+        margin-top:15px;
+
+    }
+ 
+    .sanyam1{
+         margin:20px;
+        text-decoration:none;
+        color:white;
+        font-size:large;
+        
+    }
+    .sanyam1:hover{
+        color:green;
+    }
+</style>
+
+<div class="header">
+    <div class="header_left">
+        <%= link_to 'Home', root_path, class:"sanyam1"  %>
+        <%= link_to 'About', root_path, class:"sanyam1"  %>
+        <%= link_to 'Friends', root_path, class:"sanyam1"  %>
+        <%= link_to 'Create New Friend', root_path, class:"sanyam1"  %>
+    
+    </div>
+
+    <div class="header_right">
+        
+        <% if current_user %>
+            <%= link_to 'Edit Profile', edit_user_registration_path, class:"sanyam1"  %>
+            <%= link_to 'Logout', destroy_user_session_path,method: :delete, class:"sanyam1"  %>
+        <% else %>
+             <%= link_to 'Login', new_user_session_path, class:"sanyam1"%>
+            <%= link_to 'Register', new_user_registration_path, class:"sanyam1"  %>
+        <% end %>
+        
+           
+       
+    </div>
+
+</div>
